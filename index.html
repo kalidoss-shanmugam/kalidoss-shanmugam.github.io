@@ -4,9 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalidoss Shanmugam | Mobile Solution Architect & Tech Partner for Founders</title>
+
+    <!-- Professional SEO Meta Tags -->
+    <title>Kalidoss Shanmugam | Mobile Solution Architect & Enterprise App Developer</title>
+    <meta name="title" content="Kalidoss Shanmugam | Mobile Solution Architect & Enterprise App Developer">
     <meta name="description"
+        content="Hire Kalidoss Shanmugam, a Frontend & Mobile Solution Architect with 12+ years of experience in React Native, Flutter, iOS, Android, and MVP development for startups and global enterprises.">
+    <meta name="keywords"
+        content="Mobile Solution Architect, Frontend Architect, React Native Architect, Flutter Developer, iOS Developer, Android Developer, Startup MVP Development, Enterprise App Development, Software Architecture, Technical Consultant, Kalidoss Shanmugam, Chennai">
+    <meta name="author" content="Kalidoss Shanmugam">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kalidoss-shanmugam.github.io/">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kalidoss-shanmugam.github.io/">
+    <meta property="og:title" content="Kalidoss Shanmugam | Mobile Solution Architect & Tech Partner for Founders">
+    <meta property="og:description"
         content="Turn your business idea into a scalable, high-ROI product. 12+ years of enterprise architecture and startup MVP development.">
+    <meta property="og:image" content="https://kalidoss-shanmugam.github.io/assets/preview.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kalidoss-shanmugam.github.io/">
+    <meta property="twitter:title" content="Kalidoss Shanmugam | Mobile Solution Architect">
+    <meta property="twitter:description"
+        content="Turn your business idea into a scalable, high-ROI product with 12+ years of enterprise mobile architecture experience.">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -14,7 +38,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* Light Theme Variables (Default) */
         :root {
+            --bg-color: #f8fafc;
+            --surface: #ffffff;
+            --surface-card: #ffffff;
+            --border: #e2e8f0;
+            --border-glow: #0284c733;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent: #0284c7;
+            --accent-cyan: #0891b2;
+            --whatsapp: #25d366;
+            --whatsapp-hover: #1ebe5d;
+            --linkedin: #0a66c2;
+            --gradient-text: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #9333ea 100%);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --terminal-bg: #0f172a;
+            --terminal-text: #e2e8f0;
+            --terminal-header: #1e293b;
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
             --bg-color: #07090e;
             --surface: #0f172a;
             --surface-card: #131c31;
@@ -24,11 +70,10 @@
             --text-muted: #94a3b8;
             --accent: #38bdf8;
             --accent-cyan: #22d3ee;
-            --whatsapp: #25d366;
-            --whatsapp-hover: #1ebe5d;
-            --linkedin: #0a66c2;
             --gradient-text: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --terminal-bg: #040609;
+            --terminal-text: #e2e8f0;
+            --terminal-header: #0f172a;
         }
 
         * {
@@ -43,6 +88,7 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Ambient background glow effects */
@@ -72,9 +118,11 @@
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            background: rgba(7, 9, 14, 0.9);
+            background: var(--bg-color);
+            opacity: 0.95;
             backdrop-filter: blur(16px);
             z-index: 1000;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .nav-content {
@@ -105,6 +153,27 @@
             display: flex;
             gap: 0.5rem;
             align-items: center;
+        }
+
+        /* Theme Toggle Button Style */
+        .theme-toggle-btn {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         .header-btn {
@@ -152,14 +221,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(56, 189, 248, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(2, 132, 199, 0.25);
             color: var(--accent);
             padding: 0.45rem 1rem;
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 1.25rem;
+            box-shadow: 0 0 20px rgba(2, 132, 199, 0.1);
+        }
+
+        [data-theme="dark"] .hero-badge {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
         }
 
@@ -263,6 +338,7 @@
             position: relative;
             overflow: hidden;
             transition: var(--transition);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
         .metric-card:hover {
@@ -328,19 +404,20 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
         .card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
+            border-color: var(--accent);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .card-top-icon {
             width: 48px;
             height: 48px;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(2, 132, 199, 0.2);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -348,6 +425,11 @@
             color: var(--accent);
             font-size: 1.2rem;
             margin-bottom: 1.25rem;
+        }
+
+        [data-theme="dark"] .card-top-icon {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         .card h3 {
@@ -372,7 +454,7 @@
         }
 
         .tech-pill {
-            background: rgba(255, 255, 255, 0.04);
+            background: var(--bg-color);
             border: 1px solid var(--border);
             color: var(--text-main);
             font-size: 0.75rem;
@@ -381,18 +463,18 @@
             font-weight: 500;
         }
 
-        /* Executive Code Terminal Preview (Visual Coder Touch) */
+        /* Executive Code Terminal Preview */
         .code-showcase {
-            background: #040609;
+            background: var(--terminal-bg);
             border: 1px solid var(--border);
             border-radius: 16px;
             overflow: hidden;
             margin-bottom: 4rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .terminal-header {
-            background: #0f172a;
+            background: var(--terminal-header);
             padding: 0.75rem 1rem;
             display: flex;
             align-items: center;
@@ -433,25 +515,37 @@
             padding: 1.5rem;
             font-family: 'Courier New', Courier, monospace;
             font-size: 0.85rem;
-            color: #e2e8f0;
+            color: var(--terminal-text);
             overflow-x: auto;
             line-height: 1.7;
         }
 
         .code-keyword {
+            color: #db2777;
+        }
+
+        [data-theme="dark"] .code-keyword {
             color: #f472b6;
         }
 
         .code-func {
+            color: #2563eb;
+        }
+
+        [data-theme="dark"] .code-func {
             color: #60a5fa;
         }
 
         .code-string {
+            color: #059669;
+        }
+
+        [data-theme="dark"] .code-string {
             color: #34d399;
         }
 
         .code-comment {
-            color: #64748b;
+            color: var(--text-muted);
             font-style: italic;
         }
 
@@ -475,6 +569,7 @@
             padding: 1.5rem 1.25rem;
             border-radius: 14px;
             position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
         .step-tag {
@@ -498,7 +593,7 @@
             font-size: 0.85rem;
         }
 
-        /* Proof / Client Marquee / Badges */
+        /* Proof / Client Badges */
         .proof-box {
             background: var(--surface-card);
             border: 1px solid var(--border);
@@ -506,6 +601,7 @@
             padding: 2rem 1.5rem;
             text-align: center;
             margin-bottom: 4rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
         .proof-box h3 {
@@ -526,7 +622,7 @@
         }
 
         .brand-badge {
-            background: rgba(255, 255, 255, 0.03);
+            background: var(--bg-color);
             border: 1px solid var(--border);
             padding: 0.5rem 1rem;
             border-radius: 8px;
@@ -544,7 +640,7 @@
 
         /* Final High-Conversion CTA Banner */
         .cta-banner {
-            background: linear-gradient(135deg, #0f172a 0%, #07090e 100%);
+            background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 3rem 1.5rem;
@@ -552,7 +648,7 @@
             margin-bottom: 4rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
         }
 
         .cta-banner h2 {
@@ -579,7 +675,7 @@
         }
 
         .tag {
-            background: rgba(255, 255, 255, 0.03);
+            background: var(--surface-card);
             border: 1px solid var(--border);
             color: var(--text-muted);
             padding: 0.3rem 0.65rem;
@@ -597,7 +693,7 @@
             border-radius: 50px;
             text-align: center;
             font-size: 26px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             width: 54px;
             height: 54px;
             z-index: 1000;
@@ -636,6 +732,10 @@
                 <span>Mobile Solution Architect</span>
             </a>
             <div class="nav-buttons">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                </button>
                 <a href="https://wa.me/919566241073?text=Hi%20Kalidoss,%20I%20want%20to%20discuss%20a%20tech%20architecture%20or%20MVP%20project."
                     target="_blank" class="header-btn btn-wa-header">
                     <i class="fab fa-whatsapp"></i> WhatsApp
@@ -669,7 +769,7 @@
             </div>
         </section>
 
-        <!-- Executive Metrics Bar (CEO/CTO Mindset) -->
+        <!-- Executive Metrics Bar -->
         <section class="metrics-grid">
             <div class="metric-card">
                 <h3>12+</h3>
@@ -689,7 +789,7 @@
             </div>
         </section>
 
-        <!-- Architect Code Terminal Showcase (Visual + Coder Theme) -->
+        <!-- Architect Code Terminal Showcase -->
         <div class="code-showcase">
             <div class="terminal-header">
                 <div class="terminal-dots">
@@ -864,6 +964,49 @@
             <p>&copy; 2026 Kalidoss Shanmugam. All rights reserved. | Mobile Solution & Frontend Architect</p>
         </div>
     </footer>
+
+    <!-- Light/Dark Mode Script with System Preference Support & Persistence -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        // Check local storage or system preference
+        const getStoredTheme = () => localStorage.getItem('theme');
+        const getSystemPreference = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+        const setTheme = (theme) => {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                themeIcon.className = 'fa-solid fa-moon';
+            }
+        };
+
+        // Initialize theme: Default to light unless user or system preference explicitly requests dark
+        const currentTheme = getStoredTheme() || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(currentTheme);
+
+        // Toggle handler
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.hasAttribute('data-theme');
+            if (isDark) {
+                setTheme('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                setTheme('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Listen for system theme changes if no explicit user override exists
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    </script>
 
 </body>
 
